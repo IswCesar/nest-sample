@@ -17,6 +17,9 @@ async function bootstrap() {
     }),
   );
 
+  // Enable cors
+  app.enableCors();
+
   // Swagger + OpenAPI config
   const config = new DocumentBuilder()
     .setTitle('INSSOFT API')
@@ -29,6 +32,6 @@ async function bootstrap() {
   SwaggerModule.setup('api', app, document);
 
   // await app.listen(3000);
-  await app.listen(process.env.PORT || 3000);
+  await app.listen(process.env.PORT || 3001);
 }
 bootstrap();
